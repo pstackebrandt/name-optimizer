@@ -1,42 +1,62 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <title>Try Copilot</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Try Copilot</h1>
-            <p>Try Copilot, the new code assistant for developers.</p>
-        </div>
+<head>
+    <title>Try Copilot</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+            integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Try Copilot</h1>
+    <p>Try Copilot, the new code assistant for developers.</p>
+</div>
 
-         <!-- change surname to lastname -->
-        <form>
-            <label for="first-name">First name</label>
-            <input type="text" id="first-name" placeholder="First name">
-            <!-- put last-name on a new line -->
-            <label for="last-name">Last name</label>
-            <input type="text" id="last-name" placeholder="Last name">
+<form>
+    <label for="first-name">First name</label>
+    <input type="text" id="first-name" placeholder="First name">
 
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
-            <!-- Add a text field. This field will be used to show messages. The field may hold more than one line if needed.  -->
-            <label for="message">Messages</label>
-            <textarea id="message" rows="4" cols="50" placeholder="Messages"></textarea>
-            <!-- When the user enters any character into the fields name or surname we calculate the length of the fields content. We print the name of the field and the length to the field message. -->
-            <script>
-                $("input").keyup(function() {
-                    const name = $("input[name='name']").val();
-                    const surname = $("input[name='surname']").val();
-                    const message = $("textarea[name='message']").val();
-                    $("textarea[name='message']").val("Name: " + name.length + "\nSurname: " + surname.length);
-                });
-            </script>
-        </form>
+    <label for="last-name">Last name</label>
+    <input type="text" id="last-name" placeholder="Last name">
+
+    <input type="reset" value="Reset">
+    <label for="results-view">Results</label>
+    <textarea id="results-view" rows="3" cols="50" placeholder="Results"></textarea>
+
+    <script>
+        $(document).ready(function () {
+            // When the user changes a name part we print the length of the full name.
+            /*           $("input").keyup(function () {
+                           const firstName = $("#first-name").val();
+                           const lastName = $("#last-Name").val();
+                           //alert(firstName);
+                           //alert(lastName);
+
+
+                           const myResult = (firstName?firstName: " ") + " " + lastName + " uses " +
+                               (firstName.length + lastName.length) + " characters."
+                           //alert(myResult);
+                           $("textarea[id='results-view']").val(result);
+                       });*/
+
+            <!-- When the user changes first-name we print the length of first name. -->
+            $("#first-name").keyup(function () {
+                const firstName = $("#first-name").val();
+                $("#results-view").val("First name: " + firstName.length + " characters");
+            });
+
+            <!-- When the user changes last-name, we print the length of last-name. -->
+            /*$("input[name='last-name']").keyup(function() {
+                const firstName = $("input[name='last-name']").val();
+                $("textarea[name='message']").val("First name: " + firstName.length);
+            });*/
+        });
+    </script>
+</form>
+</body>
 </html>
 
 
