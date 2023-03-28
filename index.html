@@ -27,6 +27,16 @@
     <textarea id="results-view" rows="3" cols="50" placeholder="Results"></textarea>
 
     <script>
+        function printLengthOfFirstName() {
+            const firstName = $("#first-name").val();
+            $("#results-view").val("First name: " + firstName.length + " characters");
+        }
+
+        function printLengthOfLastName() {
+            const lastName = $("#last-name").val();
+            $("#results-view").val("Last name: " + lastName.length + " characters");
+        }
+
         $(document).ready(function () {
             // When the user changes a name part we print the length of the full name.
             /*           $("input").keyup(function () {
@@ -44,15 +54,13 @@
 
             <!-- When the user changes first-name we print the length of first name. -->
             $("#first-name").keyup(function () {
-                const firstName = $("#first-name").val();
-                $("#results-view").val("First name: " + firstName.length + " characters");
+                printLengthOfFirstName()
             });
 
             <!-- When the user changes last-name, we print the length of last-name. -->
-            /*$("input[name='last-name']").keyup(function() {
-                const firstName = $("input[name='last-name']").val();
-                $("textarea[name='message']").val("First name: " + firstName.length);
-            });*/
+            $("#last-name").keyup(function () {
+                printLengthOfLastName()
+            });
         });
     </script>
 </form>
