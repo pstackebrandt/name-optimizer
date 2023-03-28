@@ -14,17 +14,15 @@
             <p>Try Copilot, the new code assistant for developers.</p>
         </div>
 
-        <!-- Add a simple form with two input fields for name and surname. -->
          <!-- change surname to lastname -->
         <form>
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Name">
-            
-            <label for="surname">Surname</label>
-            <input type="text" id="surname" placeholder="Surname">
-            <!-- Add a submit button. -->
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" placeholder="First name">
+            <!-- put last-name on a new line -->
+            <label for="last-name">Last name</label>
+            <input type="text" id="last-name" placeholder="Last name">
+
             <input type="submit" value="Submit">
-            <!-- Add a reset button. -->
             <input type="reset" value="Reset">
             <!-- Add a text field. This field will be used to show messages. The field may hold more than one line if needed.  -->
             <label for="message">Messages</label>
@@ -32,9 +30,9 @@
             <!-- When the user enters any character into the fields name or surname we calculate the length of the fields content. We print the name of the field and the length to the field message. -->
             <script>
                 $("input").keyup(function() {
-                    var name = $("input[name='name']").val();
-                    var surname = $("input[name='surname']").val();
-                    var message = $("textarea[name='message']").val();
+                    const name = $("input[name='name']").val();
+                    const surname = $("input[name='surname']").val();
+                    const message = $("textarea[name='message']").val();
                     $("textarea[name='message']").val("Name: " + name.length + "\nSurname: " + surname.length);
                 });
             </script>
