@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Try Copilot</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Try Copilot</h1>
+            <p>Try Copilot, the new code assistant for developers.</p>
+        </div>
+
+        <!-- Add a simple form with two input fields for name and surname. -->
+         <!-- change surname to lastname -->
+        <form>
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Name">
+            
+            <label for="surname">Surname</label>
+            <input type="text" name="surname" placeholder="Surname">
+            <!-- Add a submit button. -->
+            <input type="submit" value="Submit">
+            <!-- Add a reset button. -->
+            <input type="reset" value="Reset">
+            <!-- Add a text field. This field will be used to show messages. The field may hold more than one line if needed.  -->
+            <label for="message">Messages</label>
+            <textarea name="message" rows="4" cols="50" placeholder="Messages"></textarea>
+            <!-- When the user enters any character into the fields name or surname we calculate the length of the fields content. We print the name of the field and the length to the field message. -->
+            <script>
+                $("input").keyup(function() {
+                    var name = $("input[name='name']").val();
+                    var surname = $("input[name='surname']").val();
+                    var message = $("textarea[name='message']").val();
+                    $("textarea[name='message']").val("Name: " + name.length + "\nSurname: " + surname.length);
+                });
+            </script>
+        </form>
+</html>
+
+
