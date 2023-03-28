@@ -18,17 +18,17 @@
          <!-- change surname to lastname -->
         <form>
             <label for="name">Name</label>
-            <input type="text" name="name" placeholder="Name">
+            <input type="text" id="name" placeholder="Name">
             
             <label for="surname">Surname</label>
-            <input type="text" name="surname" placeholder="Surname">
+            <input type="text" id="surname" placeholder="Surname">
             <!-- Add a submit button. -->
             <input type="submit" value="Submit">
             <!-- Add a reset button. -->
             <input type="reset" value="Reset">
             <!-- Add a text field. This field will be used to show messages. The field may hold more than one line if needed.  -->
             <label for="message">Messages</label>
-            <textarea name="message" rows="4" cols="50" placeholder="Messages"></textarea>
+            <textarea id="message" rows="4" cols="50" placeholder="Messages"></textarea>
             <!-- When the user enters any character into the fields name or surname we calculate the length of the fields content. We print the name of the field and the length to the field message. -->
             <script>
                 $("input").keyup(function() {
